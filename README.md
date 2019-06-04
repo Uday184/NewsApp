@@ -75,3 +75,69 @@ http://localhost:4200/register/
 
 
 login with the user credentials. The news added by admin will be visible to users. Please refer to the attached 
+
+## docker commands and instructions
+
+----------------------------------------------------------------------
+pull a docker image:
+sudo docker pull mysql:latest
+----------------------------------------------------------------------------
+to check the images:
+sudo docker images
+-----------------------------------------------------------------
+Check running container:
+sudo docker ps
+---------------------------------------------------------------------
+check all the containers:
+sudo docker ps -a
+--------------------------------------------------------------------
+check logs of a container:
+sudo docker logs CONATAINER_ID
+--------------------------------------------------------------------
+stop a container:
+sudo docker stop CONTAINER_ID
+----------------------------------------------------------------
+remove a container:
+sudo docker rm CONTAINER_ID
+---------------------------------------------------------------
+go to bash cell of mysql:
+sudo docker exec -it CONTAINER_ID bash
+--------------------------------------------------------------
+Create mysql container:
+sudo docker run -d -p 3306:3306 --network=host -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=moviedb -e MYSQL_USER=app_root -e MYSQL_PASSWORD=root123 mysql:latest
+-----------------------------------------------------------------------
+Build image from Dockerfile:
+sudo docker build -t test-spring .
+------------------------------------------------------------------
+run the service container:
+sudo docker run --name spring-app --network=host test-spring
+---------------------------------------------------------------------
+Docerizing the frontEnd:
+========================
+Build the docker image:
+sudo docker build -t test-angular .
+-----------------------------------
+Run the angular container
+sudo docker run -d -p 4200:4200 --network=host test-angular
+===============================================================================
+push the images to docker hub:
+Login to dockerHub using bash
+sudo docker login --username= --password=
+----------------------------------
+push a Docker Inage to docker hub
+sudo docker tag IMAGE_ID uday184/movieApp:angular-image
+sudo docker push uday184/movieApp
+----------------------------------------
+============================================================
+Docker Compose
+------------------
+Run the file where docker compose file there
+sudo docker-compose up
+--------------------------------
+to bring it down
+sudo docker-compose down
+------------------------------
+MYSQL status/start/stop
+sudo service mysql status
+sudo service mysql start
+sudo service mysql stop
