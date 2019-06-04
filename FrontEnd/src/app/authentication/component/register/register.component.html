@@ -1,0 +1,36 @@
+<form class="register-form" #registerForm="ngForm" (ng-submit)="register()">
+  <mat-card class="example-card">
+    <mat-card-header style="margin: 0%">
+      <div style="color: darkblue;font-family: sans-serif;font-size: 1.5em;">Register</div>
+    </mat-card-header>
+    <div style="margin: 10px;"></div>
+
+    <mat-card-content>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="First Name" id="first_name" name="first_name" [(ngModel)]="user.firstName" required>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Last Name" id="last_name" name="last_name" [(ngModel)]="user.lastName" required>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="User Id" id="user_id" name="user_id" [(ngModel)]="user.userId" #userId="ngModel" required maxlength="10"
+          minlength="5">
+      </mat-form-field>
+      <div style="margin: 10px;"></div>
+
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Password" id="password" type="password" name="password" [(ngModel)]="user.password" required>
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions>
+      <div align="right">
+        <div style="display: inline-block;">
+          <button mat-button  class="actionButton" (click)="login()">Login</button>
+          <button mat-button id="registerUser" type="submit" (click)="register()" class="actionButton">Register</button>
+        </div>
+      </div>
+    </mat-card-actions>
+  </mat-card>
+</form>

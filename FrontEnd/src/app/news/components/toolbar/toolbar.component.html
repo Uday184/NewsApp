@@ -1,0 +1,21 @@
+<mat-toolbar color="primary" class="tool-bar">
+  <span>NEWS</span>
+  <span class="example-spacer">
+  </span>
+  <div>
+    <button id="healines" (click)="headLines()" style="background-color: rgb(56, 23, 148);color:white;margin-right: 1vw;" class="btn btn-outline-primary my-2 my-sm-0">HeadLines</button>
+
+    <button id="watch_list" (click)="watchList()" style="background-color: rgb(56, 23, 148);color:white;margin-right: 1vw;" class="btn btn-outline-primary my-2 my-sm-0" type="submit">Watch List</button>
+   
+    <button id="logout" (click)="logout()" style="background-color: rgb(56, 23, 148);color:white;" class="btn btn-outline-primary my-2 my-sm-0" type="submit">Logout</button>
+
+    <button mat-button id="popular">
+      <form #search = "ngForm" class="form-inline" (ngSubmit)="searchNews(search.value)">
+        <input name="searchKey" id="search" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" ngModel>
+        <button id="search_news" style="background-color: rgb(56, 23, 148);color:white;" class="btn btn-outline-primary my-2 my-sm-0">Search</button>
+      </form>
+    </button>
+
+  </div>
+
+</mat-toolbar>

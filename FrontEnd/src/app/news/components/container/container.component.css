@@ -1,0 +1,18 @@
+.container{
+    margin: auto;
+    height: 92vh;
+    min-width: 100vw;
+    margin-bottom: 1rem;
+    display: inline-block;
+    overflow: scroll;
+    padding-left: 12%;
+}
+
+.container::-webkit-scrollbar{
+    width: 0.325rem;
+    background: gray;
+}
+
+app-thumbnail{
+    display: inline-block;
+}

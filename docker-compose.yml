@@ -1,0 +1,41 @@
+version: '2'
+services:
+  mysql:
+   image: mysql:latest
+   ports:
+     - "3306:3306"
+   container_name: mysql-docker
+   network_mode: host
+   environment:
+     MYSQL_ROOT_PASSWORD: root
+     MYSQL_USER: app_root
+     MYSQL_PASSWORD: root123
+     MYSQL_DATABASE: newsDb
+
+  news_app:
+    image: udaychatterjee/newsapp:news-app
+    restart: always
+    network_mode: host
+    container_name: newsapp-docker
+    depends_on:
+      - mysql
+    ports:
+      - 8081:8081
+   
+  
+  news_auth_app:
+    image: udaychatterjee/newsapp:user-app
+    restart: always
+    network_mode: host
+    container_name: news-auth-docker
+    depends_on:
+      - mysql
+    ports:
+      - 8089:8089
+   
+  angular:
+    image: udaychatterjee/newsapp:angular-app
+    network_mode: host
+    container_name: angular-docker
+    ports:
+      - 8080:8080

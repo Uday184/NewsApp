@@ -1,0 +1,38 @@
+<mat-card class="thumbnail-card" id="news_title">
+  <mat-card-header style="margin: 0;height: 12vh;" >
+      <mat-card-title>
+        <h6>{{news.title}}</h6>
+      </mat-card-title>
+  </mat-card-header>
+  <br/>
+  <img class="movie-image" mat-card-image [src]="news.urlToImage !==null?news.urlToImage:'http://ipindiaservices.gov.in/GirPublic/writereaddata/images/No_Image_Available.jpg'" [alt]="news?.title" >
+ 
+  <mat-card-content style="padding: 0;margin: 0;"  >
+    <mat-card-content style="margin-top: -60px;z-index: 1;color:white;width: 100%;margin-left: 0;margin-right: 0;">
+      <div style="background-color: #000000b7;padding: 2px;width: 100%;margin-left: 0;margin-right: 0;" class="movie-overview">
+        <p id="card_cuisine_detail" style="font-size: small;padding-right: 4px;font-weight: bold;">Description : {{news.description}}</p>
+      </div>
+    </mat-card-content>
+    
+  </mat-card-content>
+  <mat-card-actions style="padding:0;margin-top: 4vh;">
+      <span style="font-weight: bold" class="news-description">Content : </span>
+    <div class="description">
+      <span style="font-size: 0.9em;">{{news.content}}</span>
+    </div>
+  </mat-card-actions>
+  <mat-card-actions style="padding:0;margin: 0;">
+    <button  *ngIf="category !== 'watchList'" class="favourite" #addFavRest id="add_news"
+            mat-button style="font-size: medium;color: crimson;" 
+            (click)="addNews()"> Add
+    </button>
+    <button  id="delete_news" *ngIf="category === 'watchList'" class="remove" 
+            mat-button style="font-size: medium;color: crimson;"
+            (click)="deleteNews()"> Remove
+    </button>
+    <button *ngIf="isAdmin" mat-button style="font-size: medium;color: crimson;"
+            (click)="updateNews()">
+      Update
+    </button>
+  </mat-card-actions>
+</mat-card>

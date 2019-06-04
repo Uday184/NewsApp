@@ -1,0 +1,77 @@
+.thumbnail-card {
+    min-width: 340px;
+    background-color: white;
+    width: 22vw;margin: 5px;
+	margin-right:1vw;
+  }
+  
+.description{
+    height: 14vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.description::-webkit-scrollbar{
+    width: 2px;
+    background: gray;
+}
+.movie-overview{
+    height:50px;
+    min-height: 40px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.movie-overview::-webkit-scrollbar{
+    width: 2px;
+    background: gray;
+}
+
+.movie-actions{
+  text-align: right;
+}
+
+  .example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+  }
+
+
+.movie-image{
+    height: 200px;
+    background-size: cover;
+  }
+
+  .card-image{
+    height: 35vh;
+    object-fit: cover;
+    background-image: '../../assets/images/favourite_icon.png';
+  }
+
+  /* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+    .thumbnail-card{
+        width: 92%;
+    }
+} 
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+
+    .thumbnail-card{
+       
+        max-width: 800px;
+    }
+
+} 
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+    .thumbnail-card{
+       
+        max-width: 800px;
+    }
+
+} 

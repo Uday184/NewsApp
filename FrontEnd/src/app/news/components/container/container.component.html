@@ -1,0 +1,8 @@
+<div class="container">
+
+<app-thumbnail *ngFor="let obj of news" [news]="obj"
+[isAdmin]="isAdmin"
+[category]="category"
+(delete)="deleteWatchList($event)"></app-thumbnail>
+
+</div>

@@ -1,0 +1,28 @@
+<form>
+  <mat-card class="example-card">
+      <mat-card-header style="margin: 0%">
+          <div style="color: darkblue;font-family: sans-serif;font-size: 1.5em;">Login User</div>
+        </mat-card-header>
+        <div style="margin: 10px;"></div>
+    <div style="margin: 20px;"></div>
+    <mat-card-content>
+          <mat-form-field class="example-full-width">
+        <input matInput placeholder="Username" [(ngModel)]="user.userId" name="userId" required>
+      </mat-form-field>
+      <div style="margin: 20px;"></div>
+      <mat-form-field class="example-full-width">
+        <input type="password" matInput placeholder="Password" [(ngModel)]="user.password" name="password" required>
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions>
+        <div align="right">
+      <div style="display: inline-block;">
+          <button mat-button id="login" type="submit" (click)="onClick('login')" #login class="actionButton" >LOGIN</button>
+          <button mat-button  id="register" (click)="onClick('register')" #register class="actionButton" >REGISTER</button>
+      </div>
+  </div>
+    </mat-card-actions>
+    
+  </mat-card>
+  </form>
+  
